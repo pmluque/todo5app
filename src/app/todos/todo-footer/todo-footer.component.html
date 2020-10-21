@@ -1,0 +1,11 @@
+<footer class="footer">
+    <!-- This should be `0 items left` by default -->
+    <span class="todo-count"><strong>{{countPending}}</strong> item left</span>
+    <!-- Remove this if you don't implement routing -->
+    <ul class="filters">
+        <li *ngFor="let item of filtersHtml" (click)="changeFilter( item )">
+            <!-- class="selected" -->
+            <a [class.selected]="item === filterCurrent" href="#/">{{item | titlecase }}</a>
+    </ul>
+    <button class="clear-completed" (click)="clean()">Clear completed</button>
+</footer>
